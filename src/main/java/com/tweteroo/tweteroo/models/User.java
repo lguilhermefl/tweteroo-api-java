@@ -1,4 +1,4 @@
-package com.tweteroo.tweteroo.model;
+package com.tweteroo.tweteroo.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
