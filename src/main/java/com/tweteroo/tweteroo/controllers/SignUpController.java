@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tweteroo.tweteroo.dtos.UserDTO;
+import com.tweteroo.tweteroo.models.User;
 import com.tweteroo.tweteroo.repositories.UserRepository;
 
 @RestController
@@ -18,6 +19,6 @@ public class SignUpController {
 
     @PostMapping
     public void create(@RequestBody UserDTO req) {
-        repository.save(new User());
+        repository.save(new User(req));
     }
 }
