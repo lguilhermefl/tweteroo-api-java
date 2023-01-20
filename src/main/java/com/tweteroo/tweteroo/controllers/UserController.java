@@ -14,7 +14,7 @@ import com.tweteroo.tweteroo.repositories.UserRepository;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/sign-up")
-public class SignUpController {
+public class UserController {
     
     @Autowired
     private UserRepository repository;
