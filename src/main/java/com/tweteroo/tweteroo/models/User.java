@@ -3,11 +3,15 @@ package com.tweteroo.tweteroo.models;
 import com.tweteroo.tweteroo.dtos.UserDTO;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
+@Data
 @NoArgsConstructor
 public class User {
 
