@@ -15,9 +15,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Tweet {
     
-    public Tweet(TweetDTO data) {
-        this.username = data.username();
-        this.text = data.tweet();
+    public Tweet(TweetDTO data, String username, String avatar) {
+        this.username = username;
+        this.avatar = avatar;
+        this.text = data.text();
     }
 
     @Id
