@@ -1,8 +1,10 @@
 package com.tweteroo.tweteroo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.tweteroo.tweteroo.dtos.TweetDTO;
@@ -26,5 +28,9 @@ public class TweetService {
         if(user.isPresent()) {
             repository.save(new Tweet(dto, username, user.get().getAvatar()));
         }
+    }
+
+    public List<Tweet> getTweets(Pageable page) {
+        return repository.findAllByOrderByIdDesc(page);
     }
 }
