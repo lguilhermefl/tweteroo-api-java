@@ -9,4 +9,5 @@ import com.tweteroo.tweteroo.models.Tweet;
 
 public interface TweetRepository extends JpaRepository<Tweet, Long> {
     List<Tweet> findAllByOrderByIdDesc(Pageable pageable);
+    List<Tweet> findByUsername(String username);
 }
