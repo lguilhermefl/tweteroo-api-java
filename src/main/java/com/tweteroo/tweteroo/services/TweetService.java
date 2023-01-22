@@ -3,6 +3,7 @@ package com.tweteroo.tweteroo.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.tweteroo.tweteroo.dtos.TweetDTO;
 import com.tweteroo.tweteroo.models.AppUser;
@@ -10,6 +11,7 @@ import com.tweteroo.tweteroo.models.Tweet;
 import com.tweteroo.tweteroo.repositories.TweetRepository;
 import com.tweteroo.tweteroo.repositories.UserRepository;
 
+@Service
 public class TweetService {
     
     @Autowired
