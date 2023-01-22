@@ -39,6 +39,6 @@ public class TweetService {
 
         if(!user.isPresent()) return List.of();
 
-        return repository.findByUsername(username);
+        return repository.findByUsernameOrderByIdDesc(username);
     }
 }
