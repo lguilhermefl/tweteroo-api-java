@@ -3,6 +3,7 @@ package com.tweteroo.tweteroo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -34,7 +35,7 @@ public class TweetController {
     }
 
     @GetMapping
-    public List<Tweet> getLastFiveTweets(@RequestParam String page) {
+    public Page<Tweet> getLastFiveTweets(@RequestParam String page) {
         int pageNumber = Integer.parseInt(page);
         Pageable sortedByIdDesc = PageRequest.of(pageNumber, 5, Sort.by("id").descending());
         return service.getTweets(sortedByIdDesc);
