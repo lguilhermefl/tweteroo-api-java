@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tweteroo.tweteroo.dtos.UserDTO;
-import com.tweteroo.tweteroo.models.AppUser;
-import com.tweteroo.tweteroo.repositories.UserRepository;
+import com.tweteroo.tweteroo.services.UserService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -17,10 +16,10 @@ import com.tweteroo.tweteroo.repositories.UserRepository;
 public class UserController {
     
     @Autowired
-    private UserRepository repository;
+    private UserService service;
 
     @PostMapping
     public void create(@RequestBody UserDTO req) {
-        repository.save(new AppUser(req));
+        service.save(req);
     }
 }
