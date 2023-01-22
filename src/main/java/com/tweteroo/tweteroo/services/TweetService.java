@@ -33,4 +33,12 @@ public class TweetService {
     public List<Tweet> getTweets(Pageable page) {
         return repository.findAllByOrderByIdDesc(page);
     }
+
+    public List<Tweet> getTweetsByUser(String username) {
+        Optional<AppUser> user = userRepository.findByUsername(username);
+
+        if(!user.isPresent()) return List.of();
+
+        return repository.findByUsername(username);
+    }
 }
