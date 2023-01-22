@@ -18,7 +18,7 @@ public class Tweet {
     public Tweet(TweetDTO data, String username, String avatar) {
         this.username = username;
         this.avatar = avatar;
-        this.text = data.tweet();
+        this.text = data.text();
     }
 
     @Id
