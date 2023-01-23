@@ -4,9 +4,9 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.tweteroo.tweteroo.models.AppUser;
+import com.tweteroo.tweteroo.models.User;
 
-public interface UserRepository extends JpaRepository<AppUser, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
     
-    Optional<AppUser> findByUsername(String username);
+    Optional<User> findByUsername(String username);
 }
